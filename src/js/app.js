@@ -1,4 +1,4 @@
-export class Character {
+class Character {
     constructor(name, type) {
         if (typeof name !== 'string' || name.length < 2 || name.length > 10) {
             throw new Error('Неправильный ввод имени')
@@ -20,18 +20,6 @@ export class Character {
         this.type = type;
         this.health = 100;
         this.level = 1;
-    }
-
-    levelUp() {
-        if (this.health !== 0) {
-            this.level = this.level + 1;
-            this.attack = this.attack * 1.2;
-            this.defence = this.defence * 1.2;
-            this.health = 100;
-        } else {
-            throw new Error('Нельзя повысить левел умершего')
-        }
-        
     }
 }
 

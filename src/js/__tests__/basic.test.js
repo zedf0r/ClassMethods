@@ -1,4 +1,4 @@
-import {Character, Bowman, Swordsman, Magician, Daemon, Undead, Zombie} from '../app';
+import {Bowman} from '../app';
 
 test('Create with correct name and stats', () => {
   const bowman = new Bowman('Robert', 'Bowman');
