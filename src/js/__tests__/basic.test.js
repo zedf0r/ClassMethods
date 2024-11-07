@@ -21,3 +21,24 @@ test ('Create with error type', () => {
   expect(() => new Bowman('Robert', (' '))).toThrow('Неправильный ввод');
   expect(() => new Bowman('Robert', (123))).toThrow('Неправильный ввод');
 })
+
+test ('LevelUp', () => {
+  const bowman = new Bowman('Robert', 'Bowman');
+  bowman.levelUp();
+  expect(bowman.level).toBe(2);
+  expect(bowman.attack).toBe(30);
+  expect(bowman.defence).toBe(30);
+  expect(bowman.health).toBe(100)
+})
+
+test ('The error of leveling up for the dead', () => {
+  const bowman = new Bowman('Robert', 'Bowman');
+  bowman.health = 0;
+  expect( () => bowman.levelUp()).toThrow('Нельзя повысить')
+})
+
+test ('Damage check', () => {
+  const bowman = new Bowman('Robert', 'Bowman');
+  bowman.damage(15);
+  expect(bowman.health).toBe(88.75)
+})
